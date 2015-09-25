@@ -2,11 +2,11 @@ import logging
 
 from django.conf import settings
 from django.contrib.auth import authenticate, login as auth_login
-from django.contrib.sites.models import get_current_site
+from django.contrib.sites.shortcuts import get_current_site
 
-from oscar.core.loading import get_model, get_class
 from oscar.apps.customer.signals import user_registered
 from oscar.core.compat import get_user_model
+from oscar.core.loading import get_class, get_model
 
 User = get_user_model()
 CommunicationEventType = get_model('customer', 'CommunicationEventType')
